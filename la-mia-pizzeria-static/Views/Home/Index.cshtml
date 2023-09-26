@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
 <!doctype html>
@@ -7,26 +7,183 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog Tech</title>
-    
+    <title>Gestionale Pizze</title>
+
     @* cdn bootstrap *@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     @* link di collegamento css *@
     <link href="~/css/mystyle.css" />
+    @* link fontawesom *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
 
     <header>
-        @* navbar *@
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="~/img/logo_pizza.png" alt="Pizza" width="40" height="40">
+                    Pizza
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Orders
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark">
+                                    <li><a class="dropdown-item" href="#">Orders still open</a></li>
+                                    <li><a class="dropdown-item" href="#">Completed order</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <main>
+    <main class="pb-5 bg-success">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12">
+
+                    <h1 class="py-5">PIzzas List</h1>
+
+                    <table class="table table-dark table-hover table-bordered border-success caption-top">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price $</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><img src="~/img/margherita.jpg" width="100" /></td>
+                                <td>Margherita</td>
+                                <td>Pomodoro, mozzarella, basilico</td>
+                                <td>5.99</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td><img src="~/img/bufala.jpg" width="100" /></td>
+                                <td>Bufala</td>
+                                <td>Bufala, pomodorini, basilico</td>
+                                <td>7.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><img src="~/img/diavola.jpg" width="100" /></td>
+                                <td>Diavola</td>
+                                <td>Pomodoro, mozzarella, salame piccante</td>
+                                <td>8.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td><img src="~/img/capricciosa.jpg" width="100" /></td>
+                                <td>Capricciosa</td>
+                                <td>Pomodoro, mozzarella, carciofi, olive, prosciutto cotto, basilico</td>
+                                <td>7.50</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td><img src="~/img/wurstel-patatine.jpg" width="100" /></td>
+                                <td>Americana</td>
+                                <td>Pomodoro, mozzarella, patatine fritte, wurstel</td>
+                                <td>6.50</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td><img src="~/img/quattro_formaggi.jpg" width="100" /></td>
+                                <td>Quattro Formaggi</td>
+                                <td>Mozzarella, gorgonzola, fontina, parmigiano</td>
+                                <td>6.00</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td><img src="~/img/ortolana.jpg" width="100" /></td>
+                                <td>Ortolana</td>
+                                <td>Mozzarella, pomodorini, zucchine, melanzane, peperoni</td>
+                                <td>7.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </div>
+        </div>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="facebook" role="button">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="twitter" role="button">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1" href="google" role="button">
+                    <i class="fab fa-google"></i>
+                </a>
+
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="instagram" role="button">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="linkedin" role="button">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="github" role="button">
+                    <i class="fab fa-github"></i>
+                </a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 
 </html>
